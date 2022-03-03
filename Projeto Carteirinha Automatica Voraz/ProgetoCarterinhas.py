@@ -12,10 +12,10 @@ def clearConsole():
 
 clearConsole()
 
-auto = Image.open('.\Carteirinha-do-Cliente-Voraz.jpeg')
+auto = Image.open('Carteirinha-do-Cliente-Voraz.png')
 auto = auto.resize((2600 , 3600))
 
-myFont = ImageFont.truetype('NewsGothicBT.ttf', 70)
+myFont = ImageFont.truetype('NewsGothicBT.ttf', 87)
 
 cTipo = input('A Carterinha Sera \n (1) Auto, (2) Residencial ou (3) Empresarial ? \n \n')
 
@@ -31,6 +31,8 @@ def cMaker(img) :
         cpf = input('Qual o CPF ? \n \n')
         clearConsole()
         seguradora = input('Qual a Seguradora ? \n \n')
+        clearConsole()
+        nSeguradora = input('Qual o Numero da Seguradora ? \n \n')
         clearConsole()
         nApolice = input('Qual o Numero da Apolice \n \n')
         clearConsole()
@@ -51,29 +53,31 @@ def cMaker(img) :
     
     
     
-    img.text((330, 430), "Cliente: " + nome.title(), font=myFont, fill=(255, 255, 255))
+    img.text((330, 480), "Cliente: " + nome.title(), font=myFont, fill=(255, 255, 255))
     
-    img.text((330, 630), "CPF: " + cpf.title(), font=myFont, fill=(255, 255, 255))
+    img.text((330, 680), "CPF: " + cpf.title(), font=myFont, fill=(255, 255, 255))
     
-    img.text((330, 830), "Seguradoura: " + seguradora.title(), font=myFont, fill=(255, 255, 255))
+    img.text((330, 880), "Seguradora: " + seguradora.title(), font=myFont, fill=(255, 255, 255))
     
-    img.text((330, 1030), "Ramo: Veículo" , font=myFont, fill=(255, 255, 255))
+    img.text((330, 1080), "Ramo: Automóvel" , font=myFont, fill=(255, 255, 255))
     
-    img.text((1530, 630), "Código do Cliente: " + codC.title(), font=myFont, fill=(255, 255, 255))
+    img.text((1530, 680), "Código do Cliente: " + codC.title(), font=myFont, fill=(255, 255, 255))
     
-    img.text((1530, 830), "Vigência: " + vigencia.upper(), font=myFont, fill=(255, 255, 255))
+    img.text((1530, 880), "Vigência: " + vigencia.upper(), font=myFont, fill=(255, 255, 255))
     
-    img.text((1530, 1030), "Apólice: " + nApolice.title(), font=myFont, fill=(255, 255, 255))
+    img.text((1530, 1080), "Apólice: " + nApolice.title(), font=myFont, fill=(255, 255, 255))
     
-    img.text((330, 2550), "Coretora Responsavel: " + cResponsavel.title(), font=myFont, fill=(1, 70, 185))
+    img.text((330, 2515), "Coretora Responsável: " + cResponsavel.title(), font=myFont, fill=(1, 70, 185), stroke_width=2)
     
-    img.text((330, 2700), "Veículo: " + mVeiculo.title(), font=myFont, fill=(1, 70, 185))
+    img.text((330, 2665), "Telefone Seguradora: " + nSeguradora.title(), font=myFont, fill=(1, 70, 185))
     
-    img.text((330, 2850), "Placa: " + pVeiculo.upper(), font=myFont, fill=(1, 70, 185))
+    img.text((330, 2785), "Veículo: " + mVeiculo.title(), font=myFont, fill=(1, 70, 185))
     
-    img.text((330, 3000), "CEP de Pernoite: " + cep.title(), font=myFont, fill=(1, 70, 185))
+    img.text((330, 2905), "Placa: " + pVeiculo.upper(), font=myFont, fill=(1, 70, 185))
     
-    img.text((1530, 2850), "Código de Doc.: " + codDoc.title(), font=myFont, fill=(1, 70, 185))
+    img.text((330, 3025), "CEP de Pernoite: " + cep.title(), font=myFont, fill=(1, 70, 185))
+    
+    img.text((1530, 2905), "Código de Doc.: " + codDoc.title(), font=myFont, fill=(1, 70, 185))
     
 
 
@@ -84,7 +88,7 @@ if cTipo in '1' or "auto" in cTipo.lower():
     
     cMaker(imgDr)
     
-    auto.show()
+    auto.save("./#30.Carteirinha-do-Cliente.png")
     
-    auto.save("#30.Carteirinha-do-Cliente.png")
+    auto.show()
     
